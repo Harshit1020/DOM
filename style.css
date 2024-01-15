@@ -66,15 +66,8 @@ html,body{
     font-size: 3vw;
 }
 
-.btn-content{
 
-    margin: 50px;
-    display: flex;
-    gap: 20px;
-
-}
-
-.btn-content button{
+button{
 
     width: 150px;
     height: 50px;
@@ -84,9 +77,7 @@ html,body{
    border-radius: 20px;
    color: #fff;
    font-weight: 500;
+   margin-left: 80px;
+   margin-top: 50px;
 
-}
-
-#rmv{
-    background-color: grey;
 }
