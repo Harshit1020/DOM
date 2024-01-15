@@ -51,30 +51,63 @@
 // })
 
 // mouser hover image effect
-var elem = document.querySelectorAll(".elem");
+// var elem = document.querySelectorAll(".elem");
 
-elem.forEach((val)=>{
+// elem.forEach((val)=>{
 
-    // console.log(val)
-  val.addEventListener("mouseenter",function(){
+//     // console.log(val)
+//   val.addEventListener("mouseenter",function(){
 
-    val.childNodes[3].style.opacity = 1;
+//     val.childNodes[3].style.opacity = 1;
 
-  })  
+//   })  
 
 
-  val.addEventListener("mouseleave",function(){
+//   val.addEventListener("mouseleave",function(){
 
-    val.childNodes[3].style.opacity = 0;
+//     val.childNodes[3].style.opacity = 0;
 
-  })
+//   })
 
 
   
-  val.addEventListener("mousemove",function(dets){
-    val.childNodes[3].style.left= dets.x + "px";
-    val.childNodes[3].style.top = dets.y + "px";
-  })
+//   val.addEventListener("mousemove",function(dets){
+//     val.childNodes[3].style.left= dets.x + "px";
+//     val.childNodes[3].style.top = dets.y + "px";
+//   })
     
     
-})
+// })
+
+
+
+var arr = [
+    { dp: "https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story: "https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { dp: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story: "https://images.unsplash.com/photo-1631391993833-9a0c6bff7ac1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { dp: "https://images.unsplash.com/photo-1626569241812-bf6ed3f65753?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story: "https://images.unsplash.com/photo-1630825434059-497a58eb1517?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { dp: "https://plus.unsplash.com/premium_photo-1679931608155-9a26a9dccd6a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", story: "https://images.unsplash.com/photo-1514163161321-f4f7c2a90296?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+];
+
+var clutter = "";
+arr.forEach((elem, id) => {
+    clutter += `<div class="story">
+                    <img id="${id}" src="${elem.dp}" alt="">
+                </div>`;
+});
+
+console.log(clutter);
+document.querySelector("#storiya").innerHTML = clutter;
+
+document.querySelector("#storiya").addEventListener("click", function (dets) {
+    document.querySelector("#full-screen").style.display = "block"
+    document.querySelector("#full-screen").style.backgroundImage = `url(${arr[ dets.target.id].story})`
+
+
+    setTimeout(()=>{
+
+        document.querySelector("#full-screen").style.display = "none"
+
+    },3000)
+    
+});
+
