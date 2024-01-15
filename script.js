@@ -22,23 +22,32 @@
 
 
 // Insta Love effect...................
-let card = document.querySelector("#card")
-let icon = document.querySelector("i")
+// let card = document.querySelector("#card")
+// let icon = document.querySelector("i")
 
-card.addEventListener("dblclick", function(){
+// card.addEventListener("dblclick", function(){
+//     icon.style.transform = "translate(-50%,-50%) scale(1)"
+//     icon.style.color = "red"
+//     icon.style.opacity = 0.8
+//     console.log('clicked !')
+//     setTimeout(()=>{
+//         icon.style.opacity = 0
+//     },1000)
+//     setTimeout(()=>{
+//         icon.style.transform = "translate(-50%,-50%) scale(0)"
+//     },3000)
+// })
 
-    icon.style.transform = "translate(-50%,-50%) scale(1)"
-    icon.style.color = "red"
-    icon.style.opacity = 0.8
-    console.log('clicked !')
-    setTimeout(()=>{
-        icon.style.opacity = 0
 
-    },1000)
-    setTimeout(()=>{
-        icon.style.transform = "translate(-50%,-50%) scale(0)"
+var main = document.querySelector("#main")
+var crsr = document.querySelector(".crsr")
 
-    },3000)
+
+main.addEventListener("mousemove", function(dets){
+
+    crsr.style.left = dets.x + "px";
+    crsr.style.top = dets.y + "px";
+    
 
 })
 
