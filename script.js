@@ -116,26 +116,26 @@
 // even after the parent function has closed 
 // A closure is created when we define a function , not when a function is executed 
 
-console.log("Hello World!");
-// global scopt
-let a = 1;
-const parentFun = ()=>{
-    // local scope
-    let b = 2;
-    console.log(a)
-    console.log(b)
+// console.log("Hello World!");
+// // global scopt
+// let a = 1;
+// const parentFun = ()=>{
+//     // local scope
+//     let b = 2;
+//     console.log(a)
+//     console.log(b)
 
-    const chilFun = ()=>{
-        console.log(a + 5);
-        console.log(b + 3);
+//     const chilFun = ()=>{
+//         console.log(a + 5);
+//         console.log(b + 3);
 
-    }
-   return chilFun;
-}
-const result = parentFun()
-console.log(result)
-result();
-console.log(a)
+//     }
+//    return chilFun;
+// }
+// const result = parentFun()
+// console.log(result)
+// result();
+// console.log(a)
 
 
 // IIFE ==> ( Immediately Invoked Function Expression )
@@ -153,24 +153,92 @@ console.log(a)
 
 
 
-const credit = ((num)=>{
+// const credit = ((num)=>{
 
-    let cred = num;
-    console.log(`initial credits : ${cred}`);
-    return ()=>{
-        cred -= 1;
-        if(cred > 0){
-            console.log(`playing game credints left ${cred} , credit(s)`);
-        }
-        else{
-            console.log("not enough credits")
-        }
-    }
-})(5);
+//     let cred = num;
+//     console.log(`initial credits : ${cred}`);
+//     return ()=>{
+//         cred -= 1;
+//         if(cred > 0){
+//             console.log(`playing game credints left ${cred} , credit(s)`);
+//         }
+//         else{
+//             console.log("not enough credits")
+//         }
+//     }
+// })(5);
 
-credit()
-credit()
-credit()
-credit()
-credit()    
+// credit()
+// credit()
+// credit()
+// credit()
+// credit()    
 
+
+// JavaScipt Prototype ..........................
+
+// const animal = {
+//     dna : 122,
+// }
+
+// const dog = {
+//     bark(){
+//         console.log('hhhhhhhhh');
+//     }
+// }
+
+
+// Object.setPrototypeOf(dog, animal);
+
+// console.log(dog.dna)
+// console.log(Object.getPrototypeOf(dog))
+
+
+
+
+// JavaSCript Destructuring 
+
+// const arr = ["hey" , "d ", "k"];
+
+// const[,c,d] = arr;
+
+// console.log(arr)
+// console.log(c)
+// console.log(d)
+
+
+// JavaScript spread operator
+
+// const obj1 = {
+//     name :'harshit',
+//     age : 20,
+//     city : 'bhopal'
+
+// }
+// const obj2 = {
+//    brand : "dj",
+//    logo : "random"
+// }
+
+// // console.log(obj1);
+// // console.log(obj2);
+
+// const full = {...obj1,...obj2}
+// console.log(full)
+
+// const obj = {
+//     name :"somthing"
+// };
+// obj?.hello;
+// console.log(obj)
+
+
+const arr = [1,2,3,4,5,2,2,6,7,8,5,9,87,67];
+const arr2 = Array(50).fill(0).map((_,i)=> i+1);
+console.log(arr2)
+
+const arr3 = [...Array(100).keys()];
+console.log(arr3)
+
+const uniqe = [...new Set(arr)];
+console.log(uniqe)
