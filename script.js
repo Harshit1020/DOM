@@ -233,12 +233,53 @@
 // console.log(obj)
 
 
-const arr = [1,2,3,4,5,2,2,6,7,8,5,9,87,67];
-const arr2 = Array(50).fill(0).map((_,i)=> i+1);
-console.log(arr2)
+// const arr = [1,2,3,4,5,2,2,6,7,8,5,9,87,67];
+// const arr2 = Array(50).fill(0).map((_,i)=> i+1);
+// console.log(arr2)
 
-const arr3 = [...Array(100).keys()];
-console.log(arr3)
+// const arr3 = [...Array(100).keys()];
+// console.log(arr3)
 
-const uniqe = [...new Set(arr)];
-console.log(uniqe)
+// const uniqe = [...new Set(arr)];
+// console.log(uniqe)
+
+
+// for(const val of arr){
+
+//     console.log(val)
+// }
+
+
+// for(const [i, val] of arr.entries()){
+
+//     console.log(i,val)
+// }
+
+
+// arr.forEach()
+// arr.map()
+// arr.filter()
+// arr.reduce();
+// arr.find();
+// arr.findIndex();
+
+
+function sumofArr(nums){
+    let sum = 0;
+    
+    for(const val of nums){
+        sum += val;
+    }
+
+    return sum;
+}
+let num = [1,2,3,4,5,6,7,28]
+const result = sumofArr(num)
+console.log(result)
+
+let rs = num.reduce((acc,cur)=> (acc + cur),0)
+console.log(rs)
+
+
+// sum without using reduce .....
+
